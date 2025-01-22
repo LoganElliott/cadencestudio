@@ -1,0 +1,124 @@
+/* Import the custom fonts */
+@import url('https://fonts.googleapis.com/css2?family=Tinos&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+
+/* Reset some default styles */
+body, html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    font-family: 'Tinos', serif;
+    background: linear-gradient(120deg, #9d384f, #262262, #5f9e8b, #155341);
+    background-size: 400% 400%;
+    animation: gradientShift 15s ease infinite;
+    color: #343434;
+}
+
+/* Keyframes for the background animation */
+@keyframes gradientShift {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* Container for the whole page */
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    text-align: center;
+}
+
+/* Content area styling */
+.content {
+    position: relative;
+    background-color: rgba(255, 200, 88, 0.9); /* #ffc858 with some transparency */
+    padding: 50px;
+    border-radius: 20px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+/* Main heading style */
+h1 {
+    font-size: 4em;
+    margin: 0;
+    color: #9d384f;
+}
+
+/* Subheading style */
+h2 {
+    font-size: 2em;
+    margin: 10px 0;
+    font-family: 'Dancing Script', serif; /* Use Dancing Script for the tagline font style */
+}
+
+/* Paragraph style */
+p {
+    font-size: 1.5em;
+    margin: 20px 0 0;
+    font-family: 'Pacifico', cursive; /* Use Pacifico for the coming soon text */
+}
+
+/* Keyframes for the bike animation */
+@keyframes moveBike {
+    0% {
+        top: 0;
+        left: 0;
+        transform: scaleX(-1) scaleY(-1); /* Face left */
+    }
+    23% {
+        top: 0;
+        left: calc(100% - 1.5em);
+        transform: scaleX(-1) scaleY(-1); /* Face left */
+    }
+    25% {
+        top: 0;
+        left: calc(100% - 1.5em);
+        transform: rotate(90deg) scaleX(-1) scaleY(-1); /* Face down */
+    }
+    48% {
+        top: calc(100% - 1.5em);
+        left: calc(100% - 1.5em);
+        transform: rotate(90deg) scaleX(-1) scaleY(-1); /* Face down */
+    }
+    50% {
+        top: calc(100% - 1.5em);
+        left: calc(100% - 1.5em);
+        transform: rotate(180deg) scaleX(-1) scaleY(-1); /* Face right */
+    }
+    73% {
+        top: calc(100% - 1.5em);
+        left: 0;
+        transform: rotate(180deg) scaleX(-1) scaleY(-1); /* Face right */
+    }
+    75% {
+        top: calc(100% - 1.5em);
+        left: 0;
+        transform: rotate(270deg) scaleX(-1) scaleY(-1); /* Face up */
+    }
+    98% {
+        top: 0;
+        left: 0;
+        transform: rotate(270deg) scaleX(-1) scaleY(-1); /* Face up */
+    }
+    100% {
+        top: 0;
+        left: 0;
+        transform: rotate(360deg) scaleX(-1) scaleY(-1); /* Reset rotation */
+    }
+}
+
+.bike-emoji {
+    position: absolute;
+    font-size: 2em; /* Increase size to 2em */
+    animation: moveBike 20s linear infinite;
+}
